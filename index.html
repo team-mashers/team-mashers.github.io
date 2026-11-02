@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title lang="en">CSAW CAC² Mashers project</title>
+<title lang="fr">CSAW CAC² Mashers project</title>
+<meta name="description" content="The fine letter was a simulation. The GDPR and NIS2 rules behind it are real.">
+<style>
+:root{--ink:#16213a;--mute:#56607a;--line:#dfe3ec;--bg:#f5f6fa;--card:#fff;--navy:#1a2a4a;--red:#b3261e;--redbg:#fdf1f0;--green:#1b7a46;--amber:#b36b00;--blue:#2563eb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* STATIC LANGUAGE SWITCHER */
+:root:lang(en) [lang="fr"] { display: none !important; }
+:root:lang(fr) [lang="en"] { display: none !important; }
+
+.top-bar{background:var(--navy);color:#fff;padding:12px 0;font-size:14px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.top-bar .wrap{display:flex;justify-content:space-between;align-items:center;}
+.lang-btn{background:rgba(255,255,255,0.15);color:#fff;border:none;padding:6px 14px;border-radius:4px;cursor:pointer;font-weight:600;font-size:14px;transition:background 0.2s}
+.lang-btn:hover{background:rgba(255,255,255,0.25)}
+
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.hero{padding:44px 0 28px}
+.hero h1{font-size:clamp(30px,6vw,46px);line-height:1.12;letter-spacing:-.02em;margin-bottom:14px}
+.hero p{font-size:19px;color:var(--mute);max-width:680px}
+.hero p strong{color:var(--ink)}
+section{padding:24px 0}
+h2{font-size:27px;letter-spacing:-.01em;margin-bottom:6px;color:var(--navy)}
+.lead{color:var(--mute);margin-bottom:20px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column}
+.card h3{font-size:18px;margin-bottom:6px;color:var(--navy)}
+.card p{font-size:16px;flex-grow:1}
+.card .art{display:inline-block;font-size:12.5px;font-weight:700;color:var(--red);letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.case-study{display:block;margin-top:14px;padding:12px;background:#f8fafc;border-left:4px solid var(--red);border-radius:4px;font-size:14.5px;color:var(--navy);font-weight:500;text-decoration:none;transition:background 0.2s}
+.case-study:hover{background:#e2e8f0;text-decoration:none}
+.case-study strong{color:var(--red);display:block;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px}
+.tabs{display:flex;gap:12px;margin-bottom:14px;flex-wrap:wrap;justify-content:center;padding:20px 0}
+.tabs button{font:inherit;font-weight:600;font-size:17px;padding:16px 24px;border-radius:8px;border:2px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;transition:all 0.2s;box-shadow:0 4px 6px -1px rgba(0,0,0,0.1)}
+.tabs button:hover{transform:translateY(-2px);box-shadow:0 6px 8px -1px rgba(0,0,0,0.15)}
+.tabs button[aria-selected=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.panel[hidden]{display:none}
+
+/* RESOURCES SECTION STYLES */
+.res h3{margin:22px 0 8px;font-size:17px;color:var(--navy)}
+.res ul{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.res li{padding:11px 16px;border-bottom:1px solid var(--line);font-size:16px}
+.res li:last-child{border:0}
+.res li small{display:block;color:var(--mute);font-size:14px;margin-top:2px}
+
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin:10px 0}
+summary{font-weight:600;cursor:pointer}
+details p{margin-top:8px;font-size:16px}
+footer{margin-top:48px;padding:28px 0 40px;border-top:1px solid var(--line);font-size:14px;color:var(--mute)}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="wrap">
+    <div>
+      <span lang="en"><b>SIMULATION</b></span>
+      <span lang="fr"><b>SIMULATION</b></span>
+    </div>
+    <button id="lang-toggle" class="lang-btn">🇫🇷 Français</button>
+  </div>
+</div>
+
+<header class="hero" role="alert"><div class="wrap">
+  <h1 lang="en">This time, it was a drill.</h1>
+  <h1 lang="fr"><strong></strong>Cette fois, c'était un exercice.</h1>
+  
+  <p lang="en">The letter you just opened was a fac-simile, <strong>But the rules behind it are real, and so are the penalties.</strong></p>
+  <p lang="fr">La lettre que vous venez d'ouvrir est un fac-similé, <strong>Mais les règles qui la sous-tendent sont réelles, tout comme les sanctions.</strong></p>
+  
+  <p lang="en" style="margin-top:12px;font-size:16px">Select your profile below to see the regulatory traps that are currently costing companies millions, sometimes without a single hacker involved.</p>
+  <p lang="fr" style="margin-top:12px;font-size:16px">Sélectionnez votre profil ci-dessous pour découvrir les pièges réglementaires qui coûtent actuellement des millions aux entreprises, souvent sans l'intervention d'aucun hacker.</p>
+</div></header>
+
+<main class="wrap">
+
+<section id="start">
+  <div class="tabs" role="tablist">
+    <!-- English Buttons -->
+    <button role="tab" id="t-sme-en" aria-selected="false" data-t="tab-sme" lang="en">Small Business & Startup Owner</button>
+    <button role="tab" id="t-ent-en" aria-selected="false" data-t="tab-ent" lang="en">Corporate CTO & Management</button>
+    <!-- French Buttons -->
+    <button role="tab" id="t-sme-fr" aria-selected="false" data-t="tab-sme" lang="fr">Propriétaire de PME & Startup</button>
+    <button role="tab" id="t-ent-fr" aria-selected="false" data-t="tab-ent" lang="fr">CTO & Direction d'Entreprise</button>
+  </div>
+</section>
+
+<!-- SME / STARTUP CONTENT (GDPR Focus) -->
+<section id="gdpr-content" class="panel" role="tabpanel" hidden>
+  <h2 lang="en">GDPR: the Startup traps</h2>
+  <h2 lang="fr">RGPD : les pièges pour Startups</h2>
+  
+  <p class="lead" lang="en">Regulators like the French CNIL frequently fine small businesses for administrative oversights, even without external "hacking" attacks.</p>
+  <p class="lead" lang="fr">Les régulateurs comme la CNIL sanctionnent fréquemment les petites entreprises pour des oublis administratifs, pas seulement pour des fuites.</p>
+  
+  <div class="grid">
+    <article class="card">
+      <span class="art">Art. 7 · ePrivacy</span>
+      <h3 lang="en">Consent & Dark Patterns</h3>
+      <h3 lang="fr">Consentement & Dark Patterns</h3>
+      
+      <p lang="en">Valid consent is free and specific. Small agencies are routinely fined for hiding the "reject" button on cookie banners or assuming consent for tracking.</p>
+      <p lang="fr">Un consentement valide est libre. Les petites agences sont régulièrement sanctionnées pour avoir caché le bouton "refuser" sur les bannières de cookies.</p>
+      
+      <a href="https://cookiefirst.com/cookies-50-000-euro-gdpr-fine-against-societe-du-figaro-by-the-french-cnil/" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        The media SME fined €50,000 simply for making it harder to refuse cookies than to accept them. →
+      </a>
+      <a href="https://www.lemondedudroit.fr/decryptages/76982-sanction-cookies-responsabilite-editeur-site-depot-de-cookies-tiers-partenaires-commerciaux.html" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        La PME de médias condamnée à 50 000 € pour avoir rendu le refus des cookies plus difficile que leur acceptation. →
+      </a>
+    </article>
+    
+    <article class="card">
+      <span class="art">Art. 15–22</span>
+      <h3 lang="en">Ignored User Rights</h3>
+      <h3 lang="fr">Droits des Utilisateurs Ignorés</h3>
+      
+      <p lang="en">Access, rectification, and erasure requests must be handled within 30 days. Startups often lack the automated tools to locate and delete user data across all backups.</p>
+      <p lang="fr">Les demandes d'accès et d'effacement doivent être traitées sous 30 jours. Les startups manquent souvent d'outils pour localiser les données dans les sauvegardes.</p>
+      
+      <a href="https://www.nomosparis.com/the-cnil-issues-a-sanction-against-discord-a-us-voip-service/" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        Fined €800,000 for keeping accounts of users who hadn't logged in for years. →
+      </a>
+      <a href="https://www.lemonde.fr/pixels/article/2022/11/17/la-cnil-inflige-a-discord-une-amende-de-800-000-euros_6150300_4408996.html" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        Condamné à 800 000 € pour avoir conservé les comptes d'utilisateurs inactifs depuis des années. →
+      </a>
+    </article>
+
+    <article class="card">
+      <span class="art">Art. 32</span>
+      <h3 lang="en">Basic Cryptography</h3>
+      <h3 lang="fr">Cryptographie de Base</h3>
+      
+      <p lang="en">Keeping passwords in plain text or transmitting unencrypted data is a direct violation, easily spotted during routine audits before any breach occurs.</p>
+      <p lang="fr">Conserver des mots de passe en clair est une violation directe, facilement repérable lors d'audits de routine avant toute fuite.</p>
+      
+      <a href="https://datepersonale.md/en/administrative-fine-in-the-amount-of-250-000-euros-applied-by-the-french-data-protection-authority-to-infogreffe-for-the-infringement-of-article-5-1-e-and-article-32-of-the-gdpr/" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        The platform that saved passwords in plain text and paid €250,000 for the shortcut. →
+      </a>
+      <a href="https://www.usine-digitale.fr/article/infogreffe-epingle-par-la-cnil-pour-avoir-conserve-trop-longtemps-et-mal-les-donnees-personnelles.N2043172" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        La plateforme qui stockait les mots de passe en clair et a payé 250 000 € pour ce raccourci. →
+      </a>
+    </article>
+
+    <article class="card">
+      <span class="art">Art. 5 · 6</span>
+      <h3 lang="en">Workplace Surveillance</h3>
+      <h3 lang="fr">Surveillance au Travail</h3>
+      
+      <p lang="en">GDPR covers physical data. Startups installing cameras to monitor staff productivity without proper legal basis or signage face immediate penalties.</p>
+      <p lang="fr">Le RGPD couvre les données physiques. Installer des caméras pour surveiller la productivité du personnel sans base légale expose à des sanctions immédiates.</p>
+      
+      <a href="https://iuslaboris.com/insights/france-eur-20000-penalty-imposed-for-an-excessive-video-monitoring-of-employees/" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        The €20,000 fine for a small translation firm that filmed employees at their desks. →
+      </a>
+      <a href="https://www.lepoint.fr/societe/surveillance-video-la-cnil-inflige-20-000-euros-d-amende-a-une-entreprise-18-06-2019-2319519_23.php" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        L'amende de 20 000 € pour une petite entreprise de traduction qui filmait ses employés à leur bureau. →
+      </a>
+    </article>
+
+    <article class="card">
+      <span class="art">Art. 5(1)(c)</span>
+      <h3 lang="en">Data Hoarding</h3>
+      <h3 lang="fr">Thésaurisation des Données</h3>
+      
+      <p lang="en">Startups often collect excessive data "just in case" they need it for AI training or future features. Data minimization is a strict legal requirement.</p>
+      <p lang="fr">Collecter des données excessives "au cas où" pour l'entraînement d'IA est illégal. La minimisation des données est une exigence légale stricte.</p>
+      
+      <a href="https://365trust.me/by-the-french-data-protection-authority-covid-19-formal-notice-to-francetest-for-insufficient-security-of-health-data/" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        The €75,000 fine for a small tech startup that collected health data without minimizing or securing it. →
+      </a>
+      <a href="https://www.lemonde.fr/pixels/article/2021/10/14/la-cnil-met-en-demeure-francetest-apres-la-fuite-de-donnees-de-sante-sur-les-tests-de-depistage-du-covid-19_6098345_4408996.html" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        L'amende de 75 000 € pour une startup ayant collecté des données de santé sans les minimiser ni les sécuriser. →
+      </a>
+    </article>
+
+    <article class="card">
+      <span class="art">Art. 28</span>
+      <h3 lang="en">Unvetted SaaS Tools</h3>
+      <h3 lang="fr">Outils SaaS Non Vérifiés</h3>
+      
+      <p lang="en">Sharing customer data with external analytics, CRM, or marketing tools without a signed Data Processing Agreement (DPA) makes you fully liable for their breaches.</p>
+      <p lang="fr">Partager des données clients avec des outils analytiques externes sans accord de traitement (DPA) vous rend pleinement responsable de leurs failles.</p>
+      
+      <a href="https://aumans-avocats.com/en/cnil-sanction-a-software-publisher-for-medical-laboratories-fined-1-5-million-euros-in-administrative-penalties/" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        The €1.5 million fine to a software provider for failing to legally secure client data with external contractors. →
+      </a>
+      <a href="https://www.lemonde.fr/pixels/article/2022/04/21/fuite-de-donnees-medicales-de-500-000-francais-l-entreprise-dedalus-condamnee-a-1-5-million-d-euros-d-amende_6123085_4408996.html" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        L'amende de 1,5 million d'euros d'un fournisseur pour n'avoir pas sécurisé légalement les données avec ses sous-traitants. →
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- CORPORATE / CTO CONTENT (NIS2 & Culture Focus) -->
+<section id="nis2-content" class="panel" role="tabpanel" hidden>
+  <h2 lang="en">NIS2 & Executive Liability</h2>
+  <h2 lang="fr">NIS2 & Responsabilité des Dirigeants</h2>
+  
+  <p class="lead" lang="en">Under Directive (EU) 2022/2555, non-compliance means personal liability for directors and heavy fines for toxic security cultures.</p>
+  <p class="lead" lang="fr">Selon la Directive (UE) 2022/2555, la non-conformité implique la responsabilité personnelle des directeurs et de lourdes amendes pour les cultures de sécurité toxiques.</p>
+  
+  <div class="grid">
+    <article class="card">
+      <span class="art">Art. 20 · Management</span>
+      <h3 lang="en">The Price of Rushed Deadlines</h3>
+      <h3 lang="fr">Le Prix des Délais Précipités</h3>
+      
+      <p lang="en">Management must approve and oversee security measures. Pressuring IT to skip security checks to meet business deadlines shifts the legal blame directly onto the C-Suite.</p>
+      <p lang="fr">La direction doit approuver et superviser la sécurité. Pousser l'IT à ignorer les contrôles de sécurité pour tenir les délais commerciaux transfère la responsabilité légale sur les cadres dirigeants.</p>
+      
+      <a href="https://www.sec.gov/newsroom/press-releases/2023-227" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        The CISO charged with fraud for hiding known vulnerabilities to maintain the company's stock value. →
+      </a>
+      <a href="https://www.lemagit.fr/actualites/366559234/Cyberattaque-SolarWinds-repond-aux-accusations-de-la-SEC" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        Le RSSI accusé de fraude pour avoir caché des vulnérabilités connues afin de maintenir le cours de l'action. →
+      </a>
+    </article>
+
+    <article class="card">
+      <span class="art">Art. 23 · Reporting</span>
+      <h3 lang="en">The 72-Hour Trap</h3>
+      <h3 lang="fr">Le Piège des 72 Heures</h3>
+      
+      <p lang="en">Incidents must be reported within strict deadlines. Bureaucracy, slow customer care, or executives trying to "fix it quietly" trigger severe administrative fines independent of the breach.</p>
+      <p lang="fr">Les incidents doivent être signalés dans des délais stricts. La bureaucratie ou les dirigeants tentant de "régler ça discrètement" déclenchent de lourdes amendes indépendantes de la faille.</p>
+      
+      <a href="https://www.politico.eu/article/dutch-privacy-watchdog-fines-booking-com-e475k/" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        Fined €475,000 not for the data breach itself, but simply for notifying the regulator 22 days late. →
+      </a>
+      <a href="https://www.politico.eu/article/dutch-privacy-watchdog-fines-booking-com-e475k/" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        Condamné à 475 000 € non pas pour la fuite de données, mais simplement pour avoir averti le régulateur avec 22 jours de retard. →
+      </a>
+    </article>
+
+    <article class="card">
+      <span class="art">Art. 21 · Supply Chain</span>
+      <h3 lang="en">Vendor Negligence</h3>
+      <h3 lang="fr">Négligence des Fournisseurs</h3>
+      
+      <p lang="en">You are responsible for your suppliers. Failing to audit a tiny third-party vendor's security posture is considered direct negligence by the corporate board.</p>
+      <p lang="fr">Vous êtes responsable de vos fournisseurs. Ne pas auditer la posture de sécurité d'un petit prestataire tiers est considéré comme une négligence directe du conseil d'administration.</p>
+      
+      <a href="https://journals.sagepub.com/doi/10.1177/20438869241299823" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        How trusting a small software update from an unvetted supplier compromised 18,000 corporate networks. →
+      </a>
+      <a href="https://journals.sagepub.com/doi/10.1177/20438869241299823" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        Comment faire confiance à une mise à jour d'un fournisseur non vérifié a compromis 18 000 réseaux d'entreprise. →
+      </a>
+    </article>
+
+    <article class="card">
+      <span class="art">Corporate Governance</span>
+      <h3 lang="en">The Cover-Up Culture</h3>
+      <h3 lang="fr">La Culture de la Dissimulation</h3>
+      
+      <p lang="en">Toxic work environments where security flaws are swept under the rug to protect management bonuses now lead to criminal convictions.</p>
+      <p lang="fr">Les environnements de travail toxiques où les failles de sécurité sont dissimulées pour protéger les bonus de la direction mènent désormais à des condamnations pénales.</p>
+      
+      <a href="https://www.justice.gov/usao-ndca/pr/former-chief-security-officer-uber-convicted-federal-charges-covering-data-breach" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        The Chief Security Officer who was criminally convicted for paying off hackers to hide a massive breach. →
+      </a>
+      <a href="https://www.justice.gov/usao-ndca/pr/former-chief-security-officer-uber-convicted-federal-charges-covering-data-breach" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        Le Chef de la Sécurité condamné au pénal pour avoir payé des hackers afin de cacher une fuite massive. →
+      </a>
+    </article>
+
+    <article class="card">
+      <span class="art">Art. 21 · Cyber Hygiene</span>
+      <h3 lang="en">Single Points of Failure</h3>
+      <h3 lang="fr">Points Individuels de Défaillance</h3>
+      
+      <p lang="en">Failing to mandate basic cyber hygiene, such as Multi-Factor Authentication (MFA) for remote access, leaves corporate networks fatally exposed to trivial attacks.</p>
+      <p lang="fr">Ne pas imposer une hygiène de base, comme l'authentification multifacteur (MFA) pour l'accès à distance, laisse les réseaux d'entreprise fatalement exposés à des attaques triviales.</p>
+      
+      <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-131a" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        How a single compromised VPN password without MFA shut down half a continent's fuel supply. →
+      </a>
+      <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-131a" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        Comment un seul mot de passe VPN compromis sans MFA a paralysé l'approvisionnement en carburant de tout un continent. →
+      </a>
+    </article>
+
+    <article class="card">
+      <span class="art">Art. 20 · Training</span>
+      <h3 lang="en">Board-Level Ignorance</h3>
+      <h3 lang="fr">Ignorance au Niveau du Conseil</h3>
+      
+      <p lang="en">Executives can no longer claim technical ignorance. The management body is legally required to follow specialized training to understand the cybersecurity risks they are approving.</p>
+      <p lang="fr">Les dirigeants ne peuvent plus invoquer l'ignorance technique. L'organe de direction est légalement tenu de suivre une formation spécialisée pour comprendre les risques qu'il approuve.</p>
+      
+      <a href="https://www.sec.gov/newsroom/press-releases/2018-71" class="case-study" target="_blank" rel="noopener" lang="en">
+        <strong>Case Study</strong>
+        The $35 million SEC fine for a corporate board that failed to disclose a massive breach to investors due to internal ignorance. →
+      </a>
+      <a href="https://www.bfmtv.com/economie/entreprises/services/yahoo-ecope-d-une-amende-de-35-millions-de-dollars_AN-201804240260.html" class="case-study" target="_blank" rel="noopener" lang="fr">
+        <strong>Étude de Cas</strong>
+        L'amende de 35 M$ de la SEC pour un conseil d'administration n'ayant pas révélé une faille massive aux investisseurs par ignorance interne. →
+      </a>
+    </article>
+  </div>
+</section>
+
+<!-- RESOURCES SECTION -->
+<section id="resources" class="res">
+  <h2 lang="en">Resource index</h2>
+  <h2 lang="fr">Index des ressources</h2>
+  
+  <p class="lead" lang="en">Official sources and technical baselines.</p>
+  <p class="lead" lang="fr">Sources officielles et bases techniques.</p>
+
+  <!-- EN Resources Container -->
+  <div lang="en">
+    <h3>Toolkits for small organisations</h3>
+    <ul>
+      <li><a href="https://www.cybermalveillance.gouv.fr" target="_blank" rel="noopener">Cybermalveillance.gouv.fr</a>
+        <small>Assistance and awareness material for small businesses (French).</small>
+      </li>
+      <li><a href="https://gdpr.eu/checklist/" target="_blank" rel="noopener">GDPR.eu compliance checklist</a>
+        <small>An introductory checklist; not an official EU source.</small>
+      </li>
+    </ul>
+
+    <h3>Evidence and enforcement data</h3>
+    <ul>
+      <li><a href="https://www.enforcementtracker.com" target="_blank" rel="noopener">CMS GDPR Enforcement Tracker</a>
+        <small>Searchable list of GDPR fines across Europe by country, sector and violation.</small>
+      </li>
+      <li><a href="https://www.ibm.com/reports/data-breach" target="_blank" rel="noopener">IBM: Cost of a Data Breach Report</a>
+        <small>Annual research on the financial impact of breaches.</small>
+      </li>
+    </ul>
+  </div>
+
+  <!-- FR Resources Container -->
+  <div lang="fr">
+    <h3>Boîtes à outils pour petites structures</h3>
+    <ul>
+      <li><a href="https://www.cybermalveillance.gouv.fr" target="_blank" rel="noopener">Cybermalveillance.gouv.fr</a>
+        <small>Assistance et matériel de sensibilisation pour les petites entreprises (gouvernement français).</small>
+      </li>
+      <li><a href="https://gdpr.eu/checklist/" target="_blank" rel="noopener">Checklist de conformité GDPR.eu</a>
+        <small>Une liste de contrôle introductive ; n'est pas une source officielle de l'UE.</small>
+      </li>
+    </ul>
+
+    <h3>Preuves et données d'application</h3>
+    <ul>
+      <li><a href="https://www.enforcementtracker.com" target="_blank" rel="noopener">CMS GDPR Enforcement Tracker</a>
+        <small>Base de données consultable des amendes RGPD à travers l'Europe par pays, secteur et violation.</small>
+      </li>
+      <li><a href="https://www.ibm.com/reports/data-breach" target="_blank" rel="noopener">IBM : Rapport sur le coût des violations de données</a>
+        <small>Recherche annuelle sur l'impact financier des fuites de données.</small>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq">
+  <h2 lang="en">Questions you may have</h2>
+  <h2 lang="fr">Questions fréquentes</h2>
+  
+  <!-- EN FAQs -->
+  <details lang="en">
+    <summary>What does this page track?</summary>
+    <p>We count page views and which specific case studies are clicked, to measure the impact of our campaign. The page uses a privacy-friendly, cookieless session tracker (<a href="https://www.goatcounter.com/">GoatCounter</a>). It does not store IP addresses or build profiles, which is why no consent banner is needed.</p>
+  </details>
+  <details lang="en">
+    <summary>Why target the boardroom?</summary>
+    <p>Because employees can't fix what management doesn't fund. A well-trained employee cannot rewrite an uncompliant cookie banner nobody budgeted for, or approve an incident response plan nobody owns. Real security starts with executive accountability.</p>
+  </details>
+  
+  <!-- FR FAQs -->
+  <details lang="fr">
+    <summary>Que suit cette page ?</summary>
+    <p>Nous comptabilisons les pages vues et les études de cas cliquées, pour mesurer l'impact de notre campagne. La page utilise un traqueur de session respectueux de la vie privée et sans cookie (<a href="https://www.goatcounter.com/">GoatCounter</a>). Elle ne stocke pas les adresses IP ni ne crée de profils, c'est pourquoi aucun bandeau de consentement n'est nécessaire.</p>
+  </details>
+  <details lang="fr">
+    <summary>Pourquoi cibler la direction ?</summary>
+    <p>Parce que les employés ne peuvent pas réparer ce que la direction ne finance pas. Un employé bien formé ne peut pas réécrire un bandeau de cookies non conforme que personne n'a budgétisé, ou approuver un plan de réponse aux incidents que personne ne dirige. La véritable sécurité commence par la responsabilité des dirigeants.</p>
+  </details>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  <p lang="en">Team Mashers · CSAW CAC² 2026 · Awareness simulation. Information is general and may not reflect national transposition.</p>
+  <p lang="fr">Team Mashers · CSAW CAC² 2026 · Simulation de sensibilisation. Les informations sont générales et peuvent ne pas refléter la transposition nationale.</p>
+</div></footer>
+
+<script>
+(function(){
+  // Language toggler
+  var btnToggle = document.getElementById('lang-toggle');
+  
+  btnToggle.addEventListener('click', function() {
+    var currentLang = document.documentElement.lang;
+    var newLang = currentLang === 'en' ? 'fr' : 'en';
+    
+    document.documentElement.lang = newLang;
+    btnToggle.textContent = newLang === 'en' ? '🇫🇷 Français' : '🇬🇧 English';
+    track('lang_switched_' + newLang, 'Language set to ' + newLang);
+  });
+
+  function track(id,title){try{if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'click/'+id,title:title,event:true});}}catch(e){}}
+
+  // Tab switching logic (Syncs both EN and FR buttons)
+  var btnSmeEn = document.getElementById('t-sme-en');
+  var btnSmeFr = document.getElementById('t-sme-fr');
+  var btnEntEn = document.getElementById('t-ent-en');
+  var btnEntFr = document.getElementById('t-ent-fr');
+  var panelSme = document.getElementById('gdpr-content');
+  var panelEnt = document.getElementById('nis2-content');
+
+  function showPanel(type) {
+    var isSme = type === 'sme';
+    
+    // Update ARIA states for English buttons
+    btnSmeEn.setAttribute('aria-selected', isSme);
+    btnEntEn.setAttribute('aria-selected', !isSme);
+    
+    // Update ARIA states for French buttons
+    btnSmeFr.setAttribute('aria-selected', isSme);
+    btnEntFr.setAttribute('aria-selected', !isSme);
+    
+    // Toggle content
+    panelSme.hidden = !isSme;
+    panelEnt.hidden = isSme;
+    
+    track('selected-' + type, 'Selected Profile: ' + type);
+  }
+
+  btnSmeEn.addEventListener('click', function(){ showPanel('sme') });
+  btnSmeFr.addEventListener('click', function(){ showPanel('sme') });
+  btnEntEn.addEventListener('click', function(){ showPanel('ent') });
+  btnEntFr.addEventListener('click', function(){ showPanel('ent') });
+
+  // Click tracking for case studies AND external resources
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('.case-study, .res a');
+    if(el) { track(el.getAttribute('href'), 'Link Clicked: ' + el.textContent.trim().slice(0,40)); }
+  });
+})();
+</script>
+
+<!-- COOKIELESS ANALYTICS (GoatCounter). Replace YOUR-CODE with the site code chosen at goatcounter.com. -->
+<script data-goatcounter="https://tiz0.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
